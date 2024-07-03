@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace homeWorkingWithSpecificRowsColumns
 {
@@ -14,8 +10,10 @@ namespace homeWorkingWithSpecificRowsColumns
 
             int minValue = 2;
             int maxValue = 5;
-            int sumSecondRow = 0;
-            int multiplyFistColumn = 1;
+            int sum = 0;
+            int secondRow = 1;
+            int multiply = 1;
+            int fistColumn = 0;
 
             int[,] array = new int[random.Next(minValue, maxValue), random.Next(minValue, maxValue)];
 
@@ -25,20 +23,20 @@ namespace homeWorkingWithSpecificRowsColumns
                 {
                     array[i, j] = random.Next(minValue, maxValue);
                     Console.Write(array[i, j] + " ");
-                    if (i == 1)
+                    if (i == secondRow)
                     {
-                        sumSecondRow += array[i, j];
+                        sum += array[i, j];
                     }
-                    if (j == 0)
+                    if (j == fistColumn)
                     {
-                        multiplyFistColumn *= array[i, j];
+                        multiply *= array[i, j];
                     }
                 }
                 Console.WriteLine();
             }
 
-            Console.WriteLine($"\nsum = {sumSecondRow}");
-            Console.WriteLine($"\nmultiply = {multiplyFistColumn}");
+            Console.WriteLine($"\nsum = {sum}");
+            Console.WriteLine($"\nmultiply = {multiply}");
         }
     }
 }
